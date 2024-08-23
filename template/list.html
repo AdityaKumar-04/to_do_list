@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'index.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Font Awesome -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+  </head>
+  <body>
+    <section class="gradient-custom" style="height: 100vh;">
+      <!-- Navbar -->
+<nav data-mdb-navbar-init class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+  <!-- Container wrapper -->
+  <div class="container">
+    <!-- Navbar brand -->
+    <a class="navbar-brand me-2" href="https://mdbgo.com/">
+      <img
+        src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+        height="16"
+        alt="MDB Logo"
+        loading="lazy"
+        style="margin-top: -1px;"
+      />
+    </a>
+
+    <!-- Toggle button -->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarButtonsExample"
+      aria-controls="navbarButtonsExample"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarButtonsExample">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" style="color: white; font-size: 20px;" href="">Hiii...{{user.username}}</a>
+        </li>
+      </ul>
+      <!-- Left links -->
+
+      <div class="d-flex align-items-center">
+       
+        <a href="/logout" class="btn btn-primary me-3">Logout</a>
+        
+      </div>
+      <div class="d-flex align-items-center">
+       
+        <a href="/list_show" class="btn btn-primary me-3">Listshow</a>
+        
+      </div>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->
+      <div class="container py-5 h-100 ">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            
+            <div class="card bg-dark text-white" style="border-radius: 1rem">
+                <label class="form-label" for="form4Example1" style="text-align: center; font-size: 25px;margin-top: 15px;">To Do List</label>
+              <div class="card-body p-4 ">
+                
+                <form method="POST" action="">
+                  {% csrf_token %}
+                  <!-- Name input -->
+                  <label class="form-label" for="form4Example1">Name</label>
+                  <div class="form-outline mb-2">
+                    <input
+                      type="text"
+                      id="form4Example1"
+                      class="form-control"
+                      name="name"
+                      value="{{user}}"
+                    />
+                    
+                  </div>
+
+                  <!-- Email input -->
+                  <div class="form-outline mb-2">
+                    <label class="form-label" for="form4Example2">Title</label>
+                    <input
+                      type="text"
+                      id="form4Example2"
+                      class="form-control"
+                      name="title"
+                    />
+                    
+                  </div>
+
+                  <!-- Message input -->
+                  <div class="form-outline mb-2">
+                    <label class="form-label" for="form4Example3"
+                      >Message</label
+                    >
+                  </div>
+                    <textarea
+                      class="form-control"
+                      id="form4Example3"
+                      rows="4"
+                      name="message"
+                    ></textarea>
+                    
+
+                  <!-- Checkbox -->
+                 
+
+                  <!-- Submit button -->
+                  <button type="submit" class="btn btn-primary btn-block mt-4 w-100">
+                    Save
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+    <!-- MDB -->
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.0.0/mdb.umd.min.js"
+></script>
+  </body>
+</html>
